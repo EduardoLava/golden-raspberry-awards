@@ -2,6 +2,7 @@ package golden.raspberry.awards.domain.service.cine;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 import javax.validation.constraints.NotBlank;
@@ -46,6 +47,27 @@ public class ProducerService {
 		return producerRepository.findProducerByName(name);
 	}
 
+	/**
+	 * Carrega os produtores existentes na base 
+	 * juntamente com os que ainda não foram salvos
+	 * 
+	 * 
+	 * @param producers
+	 * @return
+	 */
+	public List<Producer> existingValidation(List<Producer> producers){
+
+		return producers.stream()
+			.filter(producer -> 
+				producer.getName() != null 
+				&& !producer.getName().trim().isEmpty()
+			)
+			.map(producer ->
+				findProducerByName(producer.getName()).orElse(producer)
+			)
+			.collect(Collectors.toList());
+	}
+	
 	/**
 	 * Lista todos os produtores 
 	 * 

@@ -71,10 +71,17 @@ public class AwardService {
 		return 
 			producer.getMovies()
 				.stream()
-				.filter(movie -> hasMovieInNextYear(producer.getMovies(), movie.getYear()))
+				.filter(movie -> hasMovieInNextYear(
+						producer.getMovies(), 
+						movie.getYear()
+					)
+				)
 				.map(movie -> {
 					
-					OptionalInt nextYearWins = findNextYearMovie(producer.getMovies(), movie.getYear());
+					OptionalInt nextYearWins = findNextYearMovie(
+						producer.getMovies(), 
+						movie.getYear()
+					);
 					
 					return new ProducerAwardDto(
 						producer.getName(), 
