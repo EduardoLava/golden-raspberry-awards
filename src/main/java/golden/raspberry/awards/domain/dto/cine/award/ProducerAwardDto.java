@@ -14,9 +14,9 @@ public class ProducerAwardDto {
 	//------------------------------------------------
 	
 	private String producer;
+	private Integer interval;
 	private Integer previousWin;
 	private Integer followingWin;
-	private Integer interval;
 
 	
 	//------------------------------------------------
