@@ -172,8 +172,7 @@ public class Movie extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Movie [title=" + title + ", year=" + year + ", winner=" + winner + ", producers=" + producers
-				+ ", studios=" + studios + ", getId()=" + getId() + "]";
+		return "Movie [title=" + title + ", year=" + year + ", winner=" + winner + ", getId()=" + getId() + "]";
 	}
 
 	
