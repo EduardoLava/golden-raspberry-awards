@@ -26,6 +26,12 @@ public class StudioService {
 	@Autowired
 	private StudioRepository studioRepository;
 	
+	/**
+	 * Insere um estúdio de cinema
+	 * 
+	 * @param studio
+	 * @return
+	 */
 	@Transactional
 	public Studio insert(@NotNull Studio studio) {
 		
@@ -33,10 +39,21 @@ public class StudioService {
 		
 	}
 	
+	/**
+	 * Lista estúdios por nome
+	 * 
+	 * @param name
+	 * @return
+	 */
 	public Optional<Studio> findStudioByName(@NotBlank String name) {
 		return studioRepository.findStudioByName(name);
 	}
 
+	/**
+	 * Lista todos os estúdios
+	 * 
+	 * @return
+	 */
 	public List<Studio> listAll() {
 		return studioRepository.findAll();
 	}

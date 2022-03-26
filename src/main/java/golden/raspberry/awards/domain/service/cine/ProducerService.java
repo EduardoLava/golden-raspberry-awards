@@ -25,21 +25,41 @@ public class ProducerService {
 	@Autowired
 	private ProducerRepository producerRepository;
 	
+	/**
+	 * Insere um produtor 
+	 *  
+	 * @param toSave
+	 * @return
+	 */
 	@Transactional
 	public Producer insert(Producer toSave) {
 		return producerRepository.save(toSave);
 	}
 
-
+	/**
+	 * Carrega produtores por nome 
+	 * 
+	 * @param name
+	 * @return
+	 */
 	public Optional<Producer> findProducerByName(@NotBlank final String name) {
 		return producerRepository.findProducerByName(name);
 	}
 
-
+	/**
+	 * Lista todos os produtores 
+	 * 
+	 * @return
+	 */
 	public List<Producer> listAll() {
 		return producerRepository.findAll();
 	}
 	
+	/**
+	 * Carrega somente os produtores que venceram
+	 * 
+	 * @return
+	 */
 	public List<Producer> listOnlyWinners(){
 		return producerRepository.findProducerWithMoreOneWins();
 	}

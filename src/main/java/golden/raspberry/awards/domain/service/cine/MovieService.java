@@ -13,6 +13,13 @@ import golden.raspberry.awards.domain.entity.cine.Producer;
 import golden.raspberry.awards.domain.entity.cine.Studio;
 import golden.raspberry.awards.domain.repository.cine.MovieRepository;
 
+/**
+ * 
+ * @author Eduardo
+ * 
+ * Serviço com as regras de negócio para tratamento dos filmes 
+ *
+ */
 @Service
 public class MovieService {
 
@@ -25,6 +32,12 @@ public class MovieService {
 	@Autowired
 	private StudioService studioService;
 	
+	/**
+	 * Faz a inserção dos filmes e entidade associadas
+	 * 
+	 * @param toSave
+	 * @return
+	 */
 	@Transactional
 	public Movie insert(Movie toSave) {
 		
@@ -49,6 +62,11 @@ public class MovieService {
 		return movieRepository.save(toSave);
 	}
 	
+	/**
+	 * Lista todos os filmes existentes na base
+	 * 
+	 * @return
+	 */
 	public List<Movie> listAll(){
 		return movieRepository.findAll();
 	}
