@@ -29,7 +29,7 @@ public class MovieCsvDto {
 		position = 2, 
 		required = true, 
 		elementType = String.class,
-		splitOn = "\\s*,\\s*|\\s*and\\s*"
+		splitOn = "\\s*,\\s*|(?i)\\s*and\\s*"
 	)
 	private List<String> studios;
 	
@@ -37,7 +37,7 @@ public class MovieCsvDto {
 		position = 3, 
 		required = true, 
 		elementType = String.class,
-		splitOn = "\\s*,\\s*|\\s*and\\s*"
+		splitOn = "\\s*,\\s*|(?i)\\s*and\\s*"
 	)
 	private List<String> producers;
 	
