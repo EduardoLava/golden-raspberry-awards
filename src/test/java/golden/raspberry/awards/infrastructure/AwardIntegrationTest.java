@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import golden.raspberry.awards.application.restful.cine.award.AwardController;
 import golden.raspberry.awards.domain.dto.cine.award.AwardIntevalDto;
-import golden.raspberry.awards.domain.service.cine.award.AwardService;
 
 @SpringBootTest
 class AwardIntegrationTest {
 
 	@Autowired
-	AwardService awardService;
+	AwardController awardController;
 	
 	/**
 	 * Valida a listagem de vencidores com menor e maior intervalo entre os premios
@@ -21,7 +21,7 @@ class AwardIntegrationTest {
 	@Test
 	void validateMaxAndMinIntervalsAwardsTestMustPass() {
 		
-		AwardIntevalDto maxMinAwardWinners = awardService.listMaxMinAwardWinners();
+		AwardIntevalDto maxMinAwardWinners = awardController.findMaxMinAwardsIntervals();
 		
 		assertThat(maxMinAwardWinners).isNotNull();
 		assertThat(maxMinAwardWinners.getMax()).isNotNull().isNotEmpty();

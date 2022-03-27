@@ -12,7 +12,7 @@ import golden.raspberry.awards.domain.entity.cine.Producer;
 import golden.raspberry.awards.domain.service.cine.ProducerService;
 
 @SpringBootTest
-public class ProducerIntegrationTests {
+class ProducerIntegrationTests {
 
 	@Autowired
 	ProducerService producerService;
