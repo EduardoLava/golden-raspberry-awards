@@ -29,7 +29,7 @@ class AwardIntegrationTest {
 	private static final String BASE_URI_MIN_MAX = "max-min-intervals"; 
 	
 	@Autowired
-	private AwardController awardController;
+	AwardController awardController;
 	
 	@Autowired
 	ProducerRepository producerRepository;
@@ -64,12 +64,14 @@ class AwardIntegrationTest {
 		.andExpect(status().isOk())
 		
 		.andExpect(jsonPath("$.min").exists())
+		.andExpect(jsonPath("$.min").isArray())
 		.andExpect(jsonPath("$.min[0].producer").isNotEmpty())
 		.andExpect(jsonPath("$.min[0].previousWin").isNotEmpty())
 		.andExpect(jsonPath("$.min[0].followingWin").isNotEmpty())
 		.andExpect(jsonPath("$.min[0].interval").value(minInterval))
 		
 		.andExpect(jsonPath("$.max").exists())
+		.andExpect(jsonPath("$.max").isArray())
 		.andExpect(jsonPath("$.max[0].interval").value(maxInterval))
 		.andExpect(jsonPath("$.max[0].producer").isNotEmpty())
 		.andExpect(jsonPath("$.max[0].previousWin").isNotEmpty())
