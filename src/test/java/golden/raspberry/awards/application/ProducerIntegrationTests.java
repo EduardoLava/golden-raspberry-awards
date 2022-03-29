@@ -22,7 +22,7 @@ class ProducerIntegrationTests {
 	 * Valida a busca de produtores com premios
 	 */
 	@Test
-	void validateProducersWinnersMustPass() {
+	void validateProducersWinners_mustPass() {
 		
 		List<Producer> onlyWinners = producerService.listOnlyWinners();
 		

@@ -28,22 +28,31 @@ class AfterInicializationTests {
 	@Autowired
 	StudioService studioService;
 	
+	/**
+	 * Valida se os filmes foram importados na inicialização da aplicação
+	 */
 	@Test
-	void checkCsvImportMoviesTestMustPass() {
+	void checkCsvImportMoviesTest_mustPass() {
 		List<Movie> movies = movieService.listAll();
 		
 		assertThat(movies).isNotNull().isNotEmpty();
 	}
 	
+	/**
+	 * Valida se os estúdios foram importados na inicialização da aplicação
+	 */
 	@Test
-	void checkCsvImportStudiosTestMustPass() {
+	void checkCsvImportStudiosTest_mustPass() {
 		List<Studio> studios = studioService.listAll();
 		
 		assertThat(studios).isNotNull().isNotEmpty();
 	}
 	
+	/**
+	 * Valida se os produtores foram importados na inicialização da aplicação
+	 */
 	@Test
-	void checkCsvImportProducerTestMustPass() {
+	void checkCsvImportProducerTest_mustPass() {
 		List<Producer> producers = producerService.listAll();
 		
 		assertThat(producers).isNotNull().isNotEmpty();
