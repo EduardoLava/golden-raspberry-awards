@@ -24,13 +24,18 @@ public class ProducerAwardDto {
 	//------------------------------------------------
 	
 	/**
+	 * 
+	 */
+	public ProducerAwardDto() {
+	}
+	
+	/**
 	 * @param producer
 	 * @param previousWin
 	 * @param followingWin
 	 * @param interval
 	 */
 	public ProducerAwardDto(String producer, Integer previousWin, Integer followingWin) {
-		super();
 		this.producer = producer;
 		this.previousWin = previousWin;
 		this.followingWin = followingWin;
@@ -41,11 +46,6 @@ public class ProducerAwardDto {
 	//--------------  behaviors  --------------------
 	//------------------------------------------------
 	
-	/**
-	 * 
-	 */
-	public ProducerAwardDto() {
-	}
 	/**
 	 * @return the producer
 	 */

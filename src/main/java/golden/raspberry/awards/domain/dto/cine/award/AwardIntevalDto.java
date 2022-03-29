@@ -21,6 +21,14 @@ public class AwardIntevalDto {
 	//------------------------------------------------
 	//--------------  Constructors  --------------------
 	//------------------------------------------------
+
+	/**
+	 * Construtor padrão
+	 */
+	public AwardIntevalDto() {
+		super();
+	}
+	
 	
 	/**
 	 * @param min
@@ -39,6 +47,7 @@ public class AwardIntevalDto {
 	//--------------  behaviors  --------------------
 	//------------------------------------------------
 	
+
 	/**
 	 * @return the min
 	 */
