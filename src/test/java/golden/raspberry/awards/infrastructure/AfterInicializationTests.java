@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import golden.raspberry.awards.GoldenRaspberryAwardsApplication;
 import golden.raspberry.awards.domain.entity.cine.Movie;
 import golden.raspberry.awards.domain.entity.cine.Producer;
 import golden.raspberry.awards.domain.entity.cine.Studio;
@@ -15,7 +16,7 @@ import golden.raspberry.awards.domain.service.cine.MovieService;
 import golden.raspberry.awards.domain.service.cine.ProducerService;
 import golden.raspberry.awards.domain.service.cine.StudioService;
 
-@SpringBootTest
+@SpringBootTest(classes = GoldenRaspberryAwardsApplication.class)
 class AfterInicializationTests {
 
 	@Autowired
